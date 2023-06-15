@@ -21,10 +21,9 @@ public class KillTracker : MonoBehaviour, IDamagePerpetratorListener
 
     public void OnDamageDealt(Health victim, in Damage damage)
     {
-    }
-
-    public void OnKilled(Health victim, in Damage fatalDamage)
-    {
-        KillCount++;
+        if(victim.Dead)
+        {
+            KillCount++;
+        }
     }
 }
